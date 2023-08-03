@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/08/03/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>搭建个人网站</title>
+    <url>/2023/08/03/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<h2 id="博客的目录结构"><a href="#博客的目录结构" class="headerlink" title="博客的目录结构"></a>博客的目录结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml # 博客网站生成时需要用到的插件的配置文件</span><br><span class="line">├── db.json # 网站数据</span><br><span class="line">├── node_modules # 类库</span><br><span class="line">├── package-lock.json # 该博客网站生成需要的依赖项</span><br><span class="line">├── package.json # 博客网站生成需要的全局依赖项，执行npm install指令可以安装这些依赖项</span><br><span class="line">├── public # 博客网站的静态文件，会把该文件夹发布到远程服务器</span><br><span class="line">├── scaffolds # 新建一篇文章时的front-matter用到的模板，front-matter是后面静态文件生成时，文章显示参数的设置，包括文章标题，新建日期，标签等</span><br><span class="line">├── source # 里面存放着博客编写的文章</span><br><span class="line">└── themes # 博客用到的主题资源库</span><br></pre></td></tr></table></figure>
+
+<h2 id="博客内容更新"><a href="#博客内容更新" class="headerlink" title="博客内容更新"></a>博客内容更新</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [post] new_paper <span class="comment"># 创建一篇新的文章，会在/source/_posts中生成new_paper.md</span></span><br><span class="line"></span><br><span class="line">hexo new page new page <span class="comment"># 生成一个新的页面，会在/source中生成new_page文件夹，又来存放该页面的文章</span></span><br><span class="line">hexo new new_page new_paper <span class="comment"># 在新的页面中生成一篇新的文章</span></span><br><span class="line"></span><br><span class="line">hexo new draft new_draft <span class="comment"># 生成一篇草稿，这个仅自己可见，不会出现在正式网站上</span></span><br><span class="line">hexo publish draft new_draft <span class="comment"># 将草稿发布到post页面</span></span><br><span class="line"></span><br><span class="line">hexo clean <span class="comment"># 清除以往生成的博客网站数据，非必须</span></span><br><span class="line">hexo g <span class="comment"># 生成网站</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+</search>
