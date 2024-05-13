@@ -15,8 +15,8 @@
         <!-- 输入框 -->
         <header class="header">
             <h1>蛋炒饭记事本</h1>
-            <input placeholder="请输入任务" class="new-todo">
-            <button class="add">添加任务</button>
+            <input v-model="todoContent" placeholder="请输入任务" class="new-todo">
+            <button @click="add" class="add">添加任务</button>
         </header>
         <!-- 列表区域 -->
         <section class="main">
@@ -46,14 +46,25 @@
         const app = new Vue({
             el: '#app',
             data: {
+                todoContent: '',
                 list: [
                     { id: 1, content: '吃饭' },
                     { id: 2, content: '倒垃圾' }
                 ]
             },
             methods: {
-                del(id){
+                del(id) {
                     this.list = this.list.filter(item => item.id !== id)
+                },
+                add() {
+                    if (this.todoContent.trim() === '') {
+                        alert("请输入任务")
+                        return
+                    }
+                    this.list.unshift({
+                        id: +new Date(),
+                        content: this.todoContent
+                    })
                 }
             },
         })
