@@ -21,10 +21,10 @@
         <!-- 列表区域 -->
         <section class="main">
             <ul class="todo-list">
-                <li class="todo">
+                <li class="todo" v-for="(item, index) in list" :key="item.id">
                     <div class="view">
-                        <span class="index">1</span><label>喝水</label>
-                        <button class="destroy"></button>
+                        <span class="index">{{index+1}}</span><label>{{item.content}}</label>
+                        <button @click="del(item.id)" class="destroy"></button>
                     </div>
                 </li>
             </ul>
@@ -46,8 +46,16 @@
         const app = new Vue({
             el: '#app',
             data: {
-
-            }
+                list: [
+                    { id: 1, content: '吃饭' },
+                    { id: 2, content: '倒垃圾' }
+                ]
+            },
+            methods: {
+                del(id){
+                    this.list = this.list.filter(item => item.id !== id)
+                }
+            },
         })
     </script>
 </body>
