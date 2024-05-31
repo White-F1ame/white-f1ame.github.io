@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/note.css">
-    <title>蛋炒饭记事本</title>
+    <title>蛋炒饭Todo List</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <section id="app">
         <!-- 输入框 -->
         <header class="header">
-            <h1>蛋炒饭记事本</h1>
+            <h1>蛋炒饭Todo List</h1>
             <input @keyup.enter="add" v-model="todoContent" placeholder="请输入任务" class="new-todo">
             <button @click="add" class="add">添加任务</button>
         </header>
@@ -43,15 +43,15 @@
     <!-- 底部 -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        const defaultArr = [
-            { id: 1, content: '吃饭' },
-            { id: 2, content: '倒垃圾' }
-        ]
+        // const defaultArr = [
+        //     { id: 1, content: '吃饭' },
+        //     { id: 2, content: '倒垃圾' }
+        // ]
         const app = new Vue({
             el: '#app',
             data: {
                 todoContent: '',
-                list: JSON.parse(localStorage.getItem('list')) || defaultArr
+                list: JSON.parse(localStorage.getItem('list')) || []
             },
             methods: {
                 del(id) {
