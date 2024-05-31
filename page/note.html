@@ -43,14 +43,15 @@
     <!-- 底部 -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+        const defaultArr = [
+            { id: 1, content: '吃饭' },
+            { id: 2, content: '倒垃圾' }
+        ]
         const app = new Vue({
             el: '#app',
             data: {
                 todoContent: '',
-                list: [
-                    { id: 1, content: '吃饭' },
-                    { id: 2, content: '倒垃圾' }
-                ]
+                list: JSON.parse(localStorage.getItem('list')) || defaultArr
             },
             methods: {
                 del(id) {
@@ -66,10 +67,18 @@
                         content: this.todoContent
                     })
                 },
-                clear(){
+                clear() {
                     this.list = []
                 }
             },
+            watch: {
+                list: {
+                    deep: true,
+                    handler(newValue) {
+                        localStorage.setItem('list', JSON.stringify(newValue))
+                    }
+                }
+            }
         })
     </script>
 </body>
